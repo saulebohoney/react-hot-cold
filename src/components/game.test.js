@@ -10,11 +10,13 @@ describe('<Game />', ()=> {
     shallow(<Game />);
   });
 
-  it('Should render each component', () =>{
-      const wrapper = shallow(<Game/>);
-      expect(wrapper.contains(<header></header>)).toEqual(true);
+  it('Should start a new game when prompted', () => {
+    const wrapper = shallow(<Game />);
+    const instance = wrapper.instance();
+    const firstAnswer = instance.state.correctAnswer;
+    instance.newGame();
+    const newAnswer = instance.state.correctAnswer;
+    expect(firstAnswer === newAnswer).toBe(false);
+  });
 
-      // const instance = wrapper.instance();
-      //const lists = wrapper.find('List');
-   });
 });
