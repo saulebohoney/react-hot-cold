@@ -3,10 +3,18 @@ import {shallow} from 'enzyme';
 
 import GuessList from './guess-list';
 
-describe('<GuessList />', ()=> {
+describe ('<GuessList />', ()=> {
+    const seedLists = [];
+    beforeAll(() => {
+        for (let i=0; i<10; i++) {
+            seedLists.push(i)
+        }
+    });
 
   it('Should render without failing', () => {
-    shallow(<GuessList />);
+    shallow(<GuessList guesses={seedLists}/>);
   });
 
 });
+   
+ 
