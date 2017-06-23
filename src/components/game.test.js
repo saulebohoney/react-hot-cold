@@ -19,4 +19,12 @@ describe('<Game />', ()=> {
     expect(firstAnswer === newAnswer).toBe(false);
   });
 
+  it('Should reject invalid entry', () =>{
+    const wrapper = shallow(<Game />);
+    const instance = wrapper.instance();
+    instance.guess('');
+    //console.log(instance.feedback);
+    expect(instance.state.feedback).toEqual('Please enter a valid number')
+  })
+
 });
