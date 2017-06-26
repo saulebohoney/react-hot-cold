@@ -9,8 +9,9 @@ export const guessReducer= (state = initialState, action) => {
     if(action.type === MAKE_GUESS){
         return Object.assign({}, state, {
             feedback: action.feedback,
-            guesses: [...state.guesses, action.guesses],
+            guesses: [...state.guesses, action.guess],
             correctAnswer: state.correctAnswer
         })
     }
+    return state;
 };

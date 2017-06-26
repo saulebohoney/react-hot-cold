@@ -1,7 +1,7 @@
 export const MAKE_GUESS = 'MAKE_GUESS';
-export const makeGuess = (guesses, feedback) => ({
+export const makeGuess = (guess, feedback) => ({
     type: MAKE_GUESS,
-    guesses,
+    guess,
     feedback
 
-})
+});
