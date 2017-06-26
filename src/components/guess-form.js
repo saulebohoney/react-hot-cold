@@ -19,7 +19,7 @@ export default class GuessForm extends React.Component {
                 <label htmlFor="userGuess">Enter your Guess</label>
                 <input type="text" name="userGuess" id="userGuess"
                     className="text" maxLength="3" autoComplete="off"
-                    placeholder={Math.round(Math.random() * 100)} required
+                    placeholder={"Make a guess"} required
                     ref={input => this.input = input} onChange={e => this.input.value = e.target.value}/>
                 <input type="submit" id="guessButton" className="button" name="submit" value="Guess"/>
             </form>
